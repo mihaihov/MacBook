@@ -1,0 +1,14 @@
+/Users/danielaarvinti/Desktop/Mihai/DotNetInterviewPractice/bin/Debug/net8.0/DotNetInterviewPractice
+/Users/danielaarvinti/Desktop/Mihai/DotNetInterviewPractice/bin/Debug/net8.0/DotNetInterviewPractice.deps.json
+/Users/danielaarvinti/Desktop/Mihai/DotNetInterviewPractice/bin/Debug/net8.0/DotNetInterviewPractice.runtimeconfig.json
+/Users/danielaarvinti/Desktop/Mihai/DotNetInterviewPractice/bin/Debug/net8.0/DotNetInterviewPractice.dll
+/Users/danielaarvinti/Desktop/Mihai/DotNetInterviewPractice/bin/Debug/net8.0/DotNetInterviewPractice.pdb
+/Users/danielaarvinti/Desktop/Mihai/DotNetInterviewPractice/obj/Debug/net8.0/DotNetInterviewPractice.GeneratedMSBuildEditorConfig.editorconfig
+/Users/danielaarvinti/Desktop/Mihai/DotNetInterviewPractice/obj/Debug/net8.0/DotNetInterviewPractice.AssemblyInfoInputs.cache
+/Users/danielaarvinti/Desktop/Mihai/DotNetInterviewPractice/obj/Debug/net8.0/DotNetInterviewPractice.AssemblyInfo.cs
+/Users/danielaarvinti/Desktop/Mihai/DotNetInterviewPractice/obj/Debug/net8.0/DotNetInterviewPractice.csproj.CoreCompileInputs.cache
+/Users/danielaarvinti/Desktop/Mihai/DotNetInterviewPractice/obj/Debug/net8.0/DotNetInterviewPractice.dll
+/Users/danielaarvinti/Desktop/Mihai/DotNetInterviewPractice/obj/Debug/net8.0/refint/DotNetInterviewPractice.dll
+/Users/danielaarvinti/Desktop/Mihai/DotNetInterviewPractice/obj/Debug/net8.0/DotNetInterviewPractice.pdb
+/Users/danielaarvinti/Desktop/Mihai/DotNetInterviewPractice/obj/Debug/net8.0/DotNetInterviewPractice.genruntimeconfig.cache
+/Users/danielaarvinti/Desktop/Mihai/DotNetInterviewPractice/obj/Debug/net8.0/ref/DotNetInterviewPractice.dll
