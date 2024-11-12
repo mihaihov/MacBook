@@ -16,7 +16,16 @@ namespace PlayGround
 
             ServiceCollection myServiceCollection = new ServiceCollection();
             ConfigureServiceCollection(myServiceCollection);
+            RegisterProductRepository.RegisterProductRepositoryDI(myServiceCollection);
             var myServiceCollectionBuilder = myServiceCollection.BuildServiceProvider();
+
+            IProductRepository pr = myServiceCollectionBuilder.GetRequiredService<IProductRepository>();
+            var result = pr.GetWherePriceIsGreaterThan10AndEndsInLetterA();
+
+            foreach(var r in result)
+            {
+                Console.WriteLine(r.ProductName);
+            }
 
             // var br = myServiceCollectionBuilder.GetRequiredService<IAsyncRepository<Order>>();
             // var result = await br.GetAllAsync();
@@ -25,8 +34,8 @@ namespace PlayGround
             //     Console.WriteLine(r.OrderDate);
             // }
 
-            LeetCodeExercises lce = new LeetCodeExercises();
-            Console.WriteLine(lce.ZigZag("PAYPALISHIRING", 4));
+            // LeetCodeExercises lce = new LeetCodeExercises();
+            // Console.WriteLine(lce.ZigZag("PAYPALISHIRING", 4));
 
         }
 
