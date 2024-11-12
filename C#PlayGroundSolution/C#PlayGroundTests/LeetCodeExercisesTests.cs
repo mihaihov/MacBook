@@ -38,5 +38,23 @@ namespace PlayGroundTests
             //assert
             Assert.Equal("a", result);
         }
+
+        [Theory]
+        [InlineData("",1,"")]
+        [InlineData("a",1,"a")]
+        [InlineData("PAYPALISHIRING",3,"PAHNAPLSIIGYIR")]
+        [InlineData("PAYPALISHIRING",4,"PINALSIGYAHRPI")]
+        public void ZigZag_ShouldReturnCorrectResult(string s, int numrows, string result)
+        {
+            //arrange
+            LeetCodeExercises lce = new LeetCodeExercises();
+
+            //act
+            var zigZagResult = lce.ZigZag(s,numrows);
+
+            //assert
+            Assert.Equal(zigZagResult,result);
+
+        }
     }
 }

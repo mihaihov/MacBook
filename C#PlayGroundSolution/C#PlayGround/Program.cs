@@ -10,7 +10,7 @@ namespace PlayGround
 {
     public class Program
     {
-        public static async Task Main(string[] args)
+        public static void Main(string[] args)
         {
             //Delegates.DelegatesMain();
 
@@ -18,12 +18,15 @@ namespace PlayGround
             ConfigureServiceCollection(myServiceCollection);
             var myServiceCollectionBuilder = myServiceCollection.BuildServiceProvider();
 
-            var br = myServiceCollectionBuilder.GetRequiredService<IAsyncRepository<User>>();
-            var result = await br.GetAllAsync();
-            foreach(var r in result)
-            {
-                Console.WriteLine(r.UserName);
-            }
+            // var br = myServiceCollectionBuilder.GetRequiredService<IAsyncRepository<Order>>();
+            // var result = await br.GetAllAsync();
+            // foreach(var r in result)
+            // {
+            //     Console.WriteLine(r.OrderDate);
+            // }
+
+            LeetCodeExercises lce = new LeetCodeExercises();
+            Console.WriteLine(lce.ZigZag("PAYPALISHIRING", 4));
 
         }
 

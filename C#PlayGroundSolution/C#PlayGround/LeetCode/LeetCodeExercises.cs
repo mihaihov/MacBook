@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Text;
 
 namespace LeetCode
 {
@@ -68,6 +69,39 @@ namespace LeetCode
         {
             string p = s;
             return (new string(s.ToCharArray().Reverse().ToArray())).Equals(p);
+        }
+    
+        public string ZigZag(string s, int numRows)
+        {
+            Dictionary<int, string> zigzag = new Dictionary<int, string>();
+            int cKey = 1;
+            int offset = -1;
+            for(int i = 0; i< s.Length; i++)
+            {
+                if(zigzag.Keys.Count() < numRows)
+                {
+                    cKey = (i+1) % (numRows + 1);
+                }
+                else
+                {
+                    cKey += offset;
+                    if(cKey == 1)   offset = 1;
+                    if(cKey == 4) offset = -1;
+                }
+                if(zigzag.Keys.Contains(cKey))
+                    zigzag[cKey] += s[i];
+                else 
+                    zigzag.Add(cKey,s[i].ToString());
+
+            }
+
+            StringBuilder sb = new StringBuilder();
+            foreach(KeyValuePair<int,string> key in zigzag)
+            {
+                sb.Append(key.Value);
+            }
+
+            return sb.ToString();
         }
     }
 }

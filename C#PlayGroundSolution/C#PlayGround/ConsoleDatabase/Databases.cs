@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using ConsoleDatabase.Entities;
 using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.Extensions.DependencyInjection;
+
 
 namespace ConsoleDatabase
 {
@@ -48,6 +50,7 @@ namespace ConsoleDatabase
             //SeedDb(modelBuilder);
 
             //modelBuilder.ApplyConfiguration(new FluentAPI());
+            modelBuilder.Entity<User>().ToTable("AppUsers");
         }
 
         private void SeedDb(ModelBuilder modelBuilder)
