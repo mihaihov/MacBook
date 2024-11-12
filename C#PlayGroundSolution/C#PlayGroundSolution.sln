@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C#PlayGround", "C#PlayGround\C#PlayGround.csproj", "{9BBE1709-BC2C-4D9B-9BF7-B119768A0EC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C#PlayGroundTests", "C#PlayGroundTests\C#PlayGroundTests.csproj", "{77FFA6B7-8CED-4702-A72E-5777DAA03793}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9BBE1709-BC2C-4D9B-9BF7-B119768A0EC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BBE1709-BC2C-4D9B-9BF7-B119768A0EC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BBE1709-BC2C-4D9B-9BF7-B119768A0EC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BBE1709-BC2C-4D9B-9BF7-B119768A0EC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77FFA6B7-8CED-4702-A72E-5777DAA03793}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77FFA6B7-8CED-4702-A72E-5777DAA03793}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77FFA6B7-8CED-4702-A72E-5777DAA03793}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77FFA6B7-8CED-4702-A72E-5777DAA03793}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

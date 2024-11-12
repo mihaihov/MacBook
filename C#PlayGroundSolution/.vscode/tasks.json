@@ -1,0 +1,58 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Run Main Project",
+        "command": "dotnet",
+        "type": "process",
+        "args": [
+          "run",
+          "--project",
+          "C#PlayGround/C#PlayGround.csproj"
+        ],
+        "problemMatcher": "$msCompile",
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "detail": "Run the main C#PlayGround project"
+    },
+    {
+        "label": "build",
+        "command": "dotnet",
+        "type": "process",
+        "args": [
+            "build",
+            "${workspaceFolder}/C#PlayGround/C#PlayGround.csproj",
+            "/property:GenerateFullPaths=true",
+            "/consoleloggerparameters:NoSummary"
+        ],
+        "problemMatcher": "$msCompile"
+    },
+    {
+        "label": "publish",
+        "command": "dotnet",
+        "type": "process",
+        "args": [
+            "publish",
+            "${workspaceFolder}/C#PlayGround/C#PlayGround.csproj",
+            "/property:GenerateFullPaths=true",
+            "/consoleloggerparameters:NoSummary"
+        ],
+        "problemMatcher": "$msCompile"
+    },
+    {
+        "label": "watch",
+        "command": "dotnet",
+        "type": "process",
+        "args": [
+            "watch",
+            "run",
+            "--project",
+            "${workspaceFolder}/C#PlayGround/C#PlayGround.csproj"
+        ],
+        "problemMatcher": "$msCompile"
+    }
+    ]
+  }
+  
