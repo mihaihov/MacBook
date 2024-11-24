@@ -5,12 +5,13 @@ using ConsoleDatabase.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using ConsoleDatabase.Interfaces;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 
 namespace PlayGround
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
             //Delegates.DelegatesMain();
 
@@ -19,23 +20,16 @@ namespace PlayGround
             RegisterProductRepository.RegisterProductRepositoryDI(myServiceCollection);
             var myServiceCollectionBuilder = myServiceCollection.BuildServiceProvider();
 
-            IProductRepository pr = myServiceCollectionBuilder.GetRequiredService<IProductRepository>();
-            var result = pr.GetWherePriceIsGreaterThan10AndEndsInLetterA();
-
-            foreach(var r in result)
+            //this code is used to debug a migration.
+            using(var scope = myServiceCollectionBuilder.CreateScope())
             {
-                Console.WriteLine(r.ProductName);
+                var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+                var migration = context.GetService<Microsoft.EntityFrameworkCore.Migrations.IMigrator>();
+                migration.Migrate("RenameUsersTable");
             }
+            // var userRepository = myServiceCollectionBuilder.GetRequiredService<IAsyncRepository<User>>();
+            // var users = await userRepository.GetAllAsync();
 
-            // var br = myServiceCollectionBuilder.GetRequiredService<IAsyncRepository<Order>>();
-            // var result = await br.GetAllAsync();
-            // foreach(var r in result)
-            // {
-            //     Console.WriteLine(r.OrderDate);
-            // }
-
-            // LeetCodeExercises lce = new LeetCodeExercises();
-            // Console.WriteLine(lce.ZigZag("PAYPALISHIRING", 4));
 
         }
 
