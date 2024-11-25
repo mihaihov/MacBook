@@ -1,9 +1,24 @@
 using LeetCode;
-
+using ConsoleDatabase.Entities;
 namespace PlayGroundTests
 {
     public class LeetCodeExercisesTests
     {
+        public static IEnumerable<object[]> EmployeeData => 
+            new List<object[]>{
+                new object[]{ new List<Employee>{ 
+                                                    new Employee() {Id = 1, Salary = 350.5m} 
+                                                },  null 
+                            },
+                new object[]{ new List<Employee> { 
+                                                    new Employee() {Id = 1, Salary = 350.5m},
+                                                    new Employee() {Id = 2, Salary = 450.5m},  
+                                                    new Employee() {Id = 2, Salary = 550.5m}, 
+                                                },  450.5m 
+                            }
+            };
+
+
         [Theory]
         [InlineData("abab","aba")]
         [InlineData("aaaaaaaaa","aaaaaaaaa")]
@@ -53,8 +68,19 @@ namespace PlayGroundTests
             var zigZagResult = lce.ZigZag(s,numrows);
 
             //assert
-            Assert.Equal(zigZagResult,result);
+            Assert.Equal(result,zigZagResult);
 
+        }
+
+        [Theory]
+        [MemberData(nameof(EmployeeData))]
+        public void GetSecondBiggestSalary(IEnumerable<Employee> employees, decimal? expected)
+        {
+            //arrange, act
+            var result = SQLExercises.SecondHighestSalary(employees);
+
+            //assert
+            Assert.Equal(expected, result);
         }
     }
 }

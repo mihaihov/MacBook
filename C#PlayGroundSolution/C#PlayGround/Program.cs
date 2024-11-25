@@ -11,26 +11,28 @@ namespace PlayGround
 {
     public class Program
     {
-        public static async Task Main(string[] args)
+        public static void Main(string[] args)
         {
-            //Delegates.DelegatesMain();
 
-            ServiceCollection myServiceCollection = new ServiceCollection();
-            ConfigureServiceCollection(myServiceCollection);
-            RegisterProductRepository.RegisterProductRepositoryDI(myServiceCollection);
-            var myServiceCollectionBuilder = myServiceCollection.BuildServiceProvider();
+        }
 
-            //this code is used to debug a migration.
+        private static void DebugMigration(ServiceProvider myServiceCollectionBuilder)
+        {
             using(var scope = myServiceCollectionBuilder.CreateScope())
             {
                 var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
                 var migration = context.GetService<Microsoft.EntityFrameworkCore.Migrations.IMigrator>();
                 migration.Migrate("RenameUsersTable");
             }
-            // var userRepository = myServiceCollectionBuilder.GetRequiredService<IAsyncRepository<User>>();
-            // var users = await userRepository.GetAllAsync();
+        }
 
-
+        private static ServiceProvider InitializeDIC()
+        {
+            ServiceCollection myServiceCollection = new ServiceCollection();
+            ConfigureServiceCollection(myServiceCollection);
+            RegisterProductRepository.RegisterProductRepositoryDI(myServiceCollection);
+            var myServiceCollectionBuilder = myServiceCollection.BuildServiceProvider();
+            return myServiceCollectionBuilder;
         }
 
         public static void ConfigureServiceCollection(ServiceCollection myServiceCollection)

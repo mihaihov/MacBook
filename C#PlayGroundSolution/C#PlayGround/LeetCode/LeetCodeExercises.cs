@@ -72,26 +72,20 @@ namespace LeetCode
         }
     
         public string ZigZag(string s, int numRows)
-        {
+        { 
             Dictionary<int, string> zigzag = new Dictionary<int, string>();
             int cKey = 1;
             int offset = -1;
             for(int i = 0; i< s.Length; i++)
             {
-                if(zigzag.Keys.Count() < numRows)
-                {
-                    cKey = (i+1) % (numRows + 1);
-                }
-                else
-                {
-                    cKey += offset;
-                    if(cKey == 1)   offset = 1;
-                    if(cKey == 4) offset = -1;
-                }
+                if(cKey == 0)   offset = 1;
+                if(cKey == numRows - 1) offset = -1;
+
+                cKey += offset;
                 if(zigzag.Keys.Contains(cKey))
                     zigzag[cKey] += s[i];
-                else 
-                    zigzag.Add(cKey,s[i].ToString());
+                else
+                    zigzag[cKey] = s[i].ToString();
 
             }
 

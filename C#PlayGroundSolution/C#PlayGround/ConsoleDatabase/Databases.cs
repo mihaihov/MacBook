@@ -108,14 +108,14 @@ namespace ConsoleDatabase
     // In a WebApi project, EF Core is using the di container which knows how to instantiate the dbcontext.
     // However in a console app like this, there is no di container so EF Core does not know how to create DbContext during
     // design time.
-    public class DesignTimeDbCreation : IDesignTimeDbContextFactory<ApplicationDbContext>
-    {
-        public ApplicationDbContext CreateDbContext(string[] args)
-        {
-            DbContextOptionsBuilder<ApplicationDbContext> contextBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
-            contextBuilder.UseSqlServer("Server=tcp:sqlmachine.database.windows.net,1433;Initial Catalog=PlayGroundDb;Persist Security Info=False;User ID=mihaihov;Password=Fwmykigi96@@;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+    // public class DesignTimeDbCreation : IDesignTimeDbContextFactory<ApplicationDbContext>
+    // {
+    //     public ApplicationDbContext CreateDbContext(string[] args)
+    //     {
+    //         DbContextOptionsBuilder<ApplicationDbContext> contextBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
+    //         contextBuilder.UseSqlServer("Server=tcp:sqlmachine.database.windows.net,1433;Initial Catalog=PlayGroundDb;Persist Security Info=False;User ID=mihaihov;Password=Fwmykigi96@@;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
 
-            return new ApplicationDbContext(contextBuilder.Options);
-        }
-    }
+    //         return new ApplicationDbContext(contextBuilder.Options);
+    //     }
+    // }
 }
