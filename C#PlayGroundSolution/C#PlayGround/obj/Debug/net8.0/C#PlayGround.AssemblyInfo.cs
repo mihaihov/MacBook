@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("C#PlayGround")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+54ea50e62701b8d1cfd12e9adafad3da751c1c87")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f04bcfa146cb99b67d7f9d4260212bab4c93a5ed")]
 [assembly: System.Reflection.AssemblyProductAttribute("C#PlayGround")]
 [assembly: System.Reflection.AssemblyTitleAttribute("C#PlayGround")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

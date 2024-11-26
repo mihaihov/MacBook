@@ -26,9 +26,9 @@ namespace PlayGround
             }
         }
 
-        private static ServiceProvider InitializeDIC()
+        private static ServiceProvider RegisterServices()
         {
-            ServiceCollection myServiceCollection = new ServiceCollection();
+            ServiceCollection myServiceCollection = DIContainer.Instance.GetDIContainer();
             ConfigureServiceCollection(myServiceCollection);
             RegisterProductRepository.RegisterProductRepositoryDI(myServiceCollection);
             var myServiceCollectionBuilder = myServiceCollection.BuildServiceProvider();

@@ -4,7 +4,7 @@ namespace PlayGroundTests
 {
     public class LeetCodeExercisesTests
     {
-        public static IEnumerable<object[]> EmployeeData => 
+        public static IEnumerable<object[]> SecondHighestSalaryData => 
             new List<object[]>{
                 new object[]{ new List<Employee>{ 
                                                     new Employee() {Id = 1, Salary = 350.5m} 
@@ -17,7 +17,27 @@ namespace PlayGroundTests
                                                 },  450.5m 
                             }
             };
-
+        public static IEnumerable<object[]> NthHighestSalaryData =>
+            new List<object[]>{
+                new object[]{ new List<Employee>{
+                                                    new Employee() {Id = 1, Salary = 350.5m}
+                                                },  2, null
+                            },
+                new object[]{ new List<Employee> {
+                                                    new Employee() {Id = 1, Salary = 350.5m},
+                                                    new Employee() {Id = 2, Salary = 450.5m},
+                                                    new Employee() {Id = 3, Salary = 550.5m},
+                                                },  3, 350.5m
+                            },
+                new object[]{ new List<Employee> {
+                                                    new Employee() {Id = 1, Salary = 350.5m},
+                                                    new Employee() {Id = 2, Salary = 350.5m},
+                                                    new Employee() {Id = 4, Salary = 350.5m},
+                                                    new Employee() {Id = 5, Salary = 350.5m},
+                                                    new Employee() {Id = 6, Salary = 350.5m},
+                                                },  3, 350.5m
+                            }
+        };
 
         [Theory]
         [InlineData("abab","aba")]
@@ -73,7 +93,7 @@ namespace PlayGroundTests
         }
 
         [Theory]
-        [MemberData(nameof(EmployeeData))]
+        [MemberData(nameof(SecondHighestSalaryData))]
         public void GetSecondBiggestSalary(IEnumerable<Employee> employees, decimal? expected)
         {
             //arrange, act
@@ -81,6 +101,17 @@ namespace PlayGroundTests
 
             //assert
             Assert.Equal(expected, result);
+        }
+
+        [Theory]
+        [MemberData(nameof(NthHighestSalaryData))]
+        public void NthHighestSalary(IEnumerable<Employee> employees, int n, decimal? expected)
+        {
+            //arrange, act
+            var result = SQLExercises.NthHighestSalary(employees,n);
+
+            //assert
+            Assert.Equal(expected,result);
         }
     }
 }
